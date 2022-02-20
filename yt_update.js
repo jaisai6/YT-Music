@@ -16,16 +16,17 @@ const fetchVidAndUpdate = async () => {
     })
     .catch((err) => console.log(err));
 
-    const db = mongoose.connection;
+    // const db = mongoose.connection;
 
-    db.once('open', async () => {
-        if(await Vid.countDocuments().exec() > 0){
-            // update ind
-            let rand_vid = await Vid.findOne({});
-            ind = rand_vid.idx;
-            return;
-        }
-    });
+    if(await Vid.countDocuments().exec() > 0){
+
+        console.log(await Vid.countDocuments());
+        // update ind
+        let rand_vid = await Vid.findOne({});
+        console.log(rand_vid);
+        ind = rand_vid.idx;
+        
+    }
     
     //Clear the databases
     await Vid.deleteMany({}).exec();
@@ -41,6 +42,8 @@ const fetchVidAndUpdate = async () => {
     } catch (err) {
         console.log(err);
     }
+
+    process.exit();
 }   
 
 fetchVidAndUpdate();
