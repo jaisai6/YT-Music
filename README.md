@@ -15,16 +15,17 @@ To run the file locally, follow the instructions below:
    DB_URL = <YOUR MONGODB DATABASE URL>
    API_KEY = <YOUR GOOGLE API KEY>
    ```
-6. Now, install all the packages in the pacakage.json file by running the following command.
+6. Make sure that the stable version of node version 16.14.0 is installed in the local machine.
+7. Now, install all the packages in the pacakage.json file by running the following command.
    
    ```
    npm install
    ```
    
-7. Once all the pacakages are installed, run the application:
+8. Once all the pacakages are installed, run the application:
 
    ```
    npm run start
    ```
    
-8. Now, head over to ```http://localhost:3000```.
+9. Now, head over to ```http://localhost:3000```.
